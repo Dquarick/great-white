@@ -1,3 +1,12 @@
+@font-face {
+    font-family: Reis;
+    src: url(../fonts/REIS-Regular.ttf);
+}
+
+::selection {
+	background: #0099cc;
+}
+
 body {
 	font-family: Montserrat, sans-serif;
 }
@@ -6,19 +15,46 @@ h1, h2, h3, h4, h5 {
 	font-family: 'Calisto MT', serif;
 }
 
-#top-bar {
-	height: 210px;
+#header, nav{
+	background-image: url(../imgs/redox.png);
 	background-color: #0099cc;
+	background-attachment: fixed;
 }
 
-.logo-text {
+#top-bar {
+	height: 210px;
+	margin-top: 50px;
+}
+
+#logo-text {
+	position: absolute;
+	left: 0;
+	right: 0;
 	text-align: center;
-	margin-top: 0px;
 	padding-top: 15px;
 	text-transform: uppercase;
+	font-family: Reis, sans-serif;
+	font-size: 100px;
+	text-shadow: 0px 0px 10px rgba(0,0,0,.5);
+}
+
+.great {
+	color: #ff0000;
+}
+.white{
 	color: #fff;
-	font-family: 'Calisto MT', serif;
-	font-size: 16px;
+}
+
+#logo-panel {
+	animation: fadeIn 1.5s linear;
+}
+
+#logo-panel h2 {
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	font-size: 27px;
 }
 
 #top-logo {
@@ -32,21 +68,176 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar {
-	background-color: #0099cc;
 	border-radius: 0;
 	border: 0;
 }
 
-.navbar a{
+.navbar a {
 	color: #fff;
 	text-transform: uppercase;
 }
 
-.navbar li a:hover {
-	background-color: #0099cc;
+.navbar li a {
+	animation: fadeIn 1.5s linear;
 }
 
-.service-panel, .client-panel{
+.navbar li a:hover {
+	background-color: transparent;
+	animation: pulse .5s linear infinite;
+}
+
+.navbar li a:focus {
+	background-color: transparent;
+}
+
+.row {
+	max-width: 1170px;
+	margin: auto;
+}
+
+#services h2 {
+	animation: fadeIn 1.5s linear;
+}
+
+.service-panel, .client-panel {
 	text-align: center;
 	margin-top: 20px;
+}
+
+.service-panel {
+	animation: fadeIn 1.5s linear;
+}
+
+.service-panel:hover {
+	cursor: pointer;
+}
+
+.client-panel img {
+	margin: auto;
+}
+
+#portfolio{
+	background-color: #efefef;
+	background-image: url(../imgs/shark-skin.png);
+	background-attachment: fixed;
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+#contact {
+	background-color: #efefef;
+	background-image: url(../imgs/rocks.png);
+	background-attachment: fixed;
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+#pricing ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+.form-control {
+	margin-top: 10px;
+}
+
+#contact button {
+	margin-top: 10px;
+}
+
+footer {
+	height: 300px;
+	background-color: #bbb;
+	background-image: url(../imgs/brushed-aluminium.png);
+}
+
+/* ANIMATIONS */
+.pulse {
+	animation-name: pulse;
+	-webkit-animation-name: pulse;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		opacity: 0.9;		
+	}
+	50% {
+		transform: scale(1.05);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(1);
+		opacity: 0.9;	
+	}			
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(0.95);
+		opacity: 0.7;		
+	}
+	50% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(0.95);
+		opacity: 0.7;	
+	}			
+}
+
+.fadeIn {
+	animation-name: fadeIn;
+	-webkit-animation-name: fadeIn;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes fadeIn {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		transform: scale(1.1);	
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		-webkit-transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		-webkit-transform: scale(1.1);
+	}
+	80% {
+		-webkit-transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}		
 }
