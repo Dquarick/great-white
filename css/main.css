@@ -1,0 +1,52 @@
+body {
+	font-family: Montserrat, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Calisto MT', serif;
+}
+
+#top-bar {
+	height: 210px;
+	background-color: #0099cc;
+}
+
+.logo-text {
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 15px;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: 'Calisto MT', serif;
+	font-size: 16px;
+}
+
+#top-logo {
+	margin: auto;
+	transition: opacity .3s;
+}
+
+#top-logo:hover {
+	opacity: .8;
+	cursor: pointer;
+}
+
+.navbar {
+	background-color: #0099cc;
+	border-radius: 0;
+	border: 0;
+}
+
+.navbar a{
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.navbar li a:hover {
+	background-color: #0099cc;
+}
+
+.service-panel, .client-panel{
+	text-align: center;
+	margin-top: 20px;
+}
