@@ -7,6 +7,22 @@
 	background: #0099cc;
 }
 
+#to-top {
+	visibility: hidden;
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	border-radius: 30px;
+	background-color: #0099cc;
+	background-image: url(../imgs/redox.png);
+	box-shadow: 0 0 3px rgba(0,0,0,.5);
+	color: #fff;
+	padding-top: 12px;
+	text-align: center;
+}
+
 body {
 	font-family: Montserrat, sans-serif;
 }
@@ -36,17 +52,28 @@ h1, h2, h3, h4, h5 {
 	font-family: Reis, sans-serif;
 	font-size: 100px;
 	text-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
 }
 
 .great {
 	color: #ff0000;
 }
-.white{
+.white {
 	color: #fff;
 }
 
 #logo-panel {
+	width: 400px;
+	margin: auto;
 	animation: fadeIn 1.5s linear;
+	transition: opacity .5s;
+}
+
+#logo-panel:hover {
+	cursor: pointer;
+	opacity: .8;
 }
 
 #logo-panel h2 {
@@ -55,16 +82,12 @@ h1, h2, h3, h4, h5 {
 	text-transform: uppercase;
 	text-shadow: 0px 0px 10px rgba(0,0,0,.5);
 	font-size: 27px;
+	width: 400px;
 }
 
 #top-logo {
 	margin: auto;
 	transition: opacity .3s;
-}
-
-#top-logo:hover {
-	opacity: .8;
-	cursor: pointer;
 }
 
 .navbar {
@@ -95,25 +118,77 @@ h1, h2, h3, h4, h5 {
 	margin: auto;
 }
 
-#services h2 {
+.inspect-text {
+	position: absolute;
+	top: -5px;
+	left: 0;
+	right: 0;
+	font-family: Reis, sans-serif;
+	color: #ff0000;
+	font-size: 50px;
+	visibility: hidden;
+}
+
+.show-inspect {
+	visibility:visible; 
+}
+
+#services h2, #portfolio h2 {
 	animation: fadeIn 1.5s linear;
 }
 
-.service-panel, .client-panel {
+.service-panel, .client-panel, .pricing-panel {
 	text-align: center;
 	margin-top: 20px;
 }
 
-.service-panel {
+.service-panel, .client-panel {
 	animation: fadeIn 1.5s linear;
 }
 
-.service-panel:hover {
+.service-panel:hover, .pricing-panel:hover {
 	cursor: pointer;
 }
 
 .client-panel img {
 	margin: auto;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+  color: #fff;
+}
+
+.btn:focus {
+	color: #fff;
+}
+
+.blue {
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3c93d5;
+}
+
+.blue:hover {
+  background-color: #6fc6ff;
+	color: #fff;
+}
+
+a.inspect-text:hover {
+	text-decoration: none;
+	color: #ff0000;
 }
 
 #portfolio{
@@ -132,6 +207,25 @@ h1, h2, h3, h4, h5 {
 	padding-bottom: 20px;
 }
 
+.contact-link-outer {
+	padding-bottom: 10px;
+}
+
+.contact-link {
+	color: #3c93d5;
+	transition: color .5s;
+}
+
+.contact-link:hover {
+	text-decoration: none;
+	color: #6fc6ff;
+}
+
+#contact .fa {
+	color: #ff0000;
+	width: 15px;
+}
+
 #pricing ul {
 	list-style-type: none;
 	padding-left: 0px;
@@ -146,9 +240,15 @@ h1, h2, h3, h4, h5 {
 }
 
 footer {
-	height: 300px;
 	background-color: #bbb;
 	background-image: url(../imgs/brushed-aluminium.png);
+	background-attachment: fixed;
+}
+
+#big-fish{
+	font-family: Reis, sans-serif;
+	font-size: 70px;
+	color: #ff0000;
 }
 
 /* ANIMATIONS */
@@ -165,7 +265,7 @@ footer {
 
 @keyframes pulse {
 	0% {
-		transform: scale(1);
+		transform: scale(.95);
 		opacity: 0.9;		
 	}
 	50% {
@@ -173,7 +273,7 @@ footer {
 		opacity: 1;	
 	}	
 	100% {
-		transform: scale(1);
+		transform: scale(.95);
 		opacity: 0.9;	
 	}			
 }
@@ -184,7 +284,7 @@ footer {
 		opacity: 0.7;		
 	}
 	50% {
-		-webkit-transform: scale(1);
+		-webkit-transform: scale(1.05);
 		opacity: 1;	
 	}	
 	100% {
@@ -240,4 +340,74 @@ footer {
 		-webkit-transform: scale(1);
 		opacity: 1;	
 	}		
+}
+
+.floating{
+	animation-name: floating;
+	-webkit-animation-name: floating;
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(0%);	
+	}
+	50% {
+		transform: translateY(12%);	
+	}	
+	100% {
+		transform: translateY(0%);
+	}			
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(0%);	
+	}
+	50% {
+		-webkit-transform: translateY(12%);	
+	}	
+	100% {
+		-webkit-transform: translateY(0%);
+	}			
+}
+
+.flicker{
+	animation-name: flicker;
+	-webkit-animation-name: flicker;
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes flicker {
+	0% {
+		opacity: .7;	
+	}
+	50% {
+		opacity: 1;	
+	}	
+	100% {
+		opacity: .7;
+	}			
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(0%);	
+	}
+	50% {
+		-webkit-transform: translateY(12%);	
+	}	
+	100% {
+		-webkit-transform: translateY(0%);
+	}			
 }
